@@ -1,0 +1,11 @@
+.container.mt-5.pt-2
+  .row.justify-content-center
+    .col-sm-6
+      = image_tag(@item.image.url, class: "img-fluid")
+
+    .col-sm-6
+      %h2= @item.name
+      %p.lead= @item.description
+      %p= @item.price
+      %p.text-muted Contact this person: 
+      %p= @item.user.phone

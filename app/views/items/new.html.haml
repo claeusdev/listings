@@ -1,0 +1,22 @@
+.pt-5
+  %h1.text-center Add your ad
+  %hr
+  .container-fluid
+    .row.justify-content-center
+      = form_with(model: @item, local: true) do |f|
+
+        .form-group
+          = f.label "Give your ad a name", class: "form-label"
+          = f.text_field :name, class: "form-control"
+        .form-group
+          = f.label "Give a description of your item", class: "form-label"
+          = f.text_area :description, class: "form-control"
+        .form-group
+          = f.label "Set a price for your item", class: "form-label"
+          = f.number_field :price, class: "form-control"
+        .form-group
+          = f.label "Add an image to your item", class: "form-label"
+          = f.file_field :image, class: "form-control"
+
+        -# = f.collection_select :category_id, Category.all.order(:name), :id, :name
+        = f.submit "Post ad", class: "btn btn-primary"

@@ -1,0 +1,18 @@
+<section>
+	<div class="w-100 w-50-ns center">
+		<div class="tc center bb b--black-10 mv5" style="">
+			<div class="center w-75-l w-100" style="">
+				<p class="f4 " style="">The simplest way to start writing online.</p>
+			</div>
+			<div class="w-100 mv4 pv4">
+				<% if current_user %>
+					<%= link_to "Start writing", new_item_path, class: "fr f6 link bn ph3 pv2 mb2 mh2 br4 b bg-blue white dim pointer fn ember-view"%>
+
+				<% else %>
+					<%= link_to "Get Started with twitter", '/auth/twitter/', class: "fr f6 link bn ph3 pv2 mb2 mh2 br4 b bg-blue white dim pointer fn ember-view"%>
+				<% end %>
+				
+			</div>
+		</div>
+	</div>
+<section>

@@ -1,0 +1,4 @@
+- categories.each do |cat|
+    %li
+        = link_to_unless_current cat.name, cat
+        = render "subcategories", categories: cat.children if cat.children.present?

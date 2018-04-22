@@ -1,0 +1,14 @@
+%h1= @category.name
+%p= @category.items.count
+- @category.ancestors.each do |cat|
+    = link_to cat.name, cat
+    &gt;
+
+%ul
+    - Category.roots.each do |cat|
+        %li
+            = link_to cat.name, cat, class: ("active" if @category.root == cat)
+
+= render "subcategories", categories: @category.root.descendants
+
+= render @category.items

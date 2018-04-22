@@ -1,0 +1,9 @@
+.jumbotron.bg-white
+  %h1.jumbotron-heading= @user.username
+  %p.lead.text-mutedSomething= @user.phone
+  - if current_user == @user
+    = link_to "Edit your details", edit_user_registration_path
+
+.container
+  .row
+    = render @user.items
