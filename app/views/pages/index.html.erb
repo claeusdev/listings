@@ -1,18 +1,36 @@
 <section class="jumbotron text-center bg-white">
   <div class="container">
-    <h1 class="jumbotron-heading">Album example</h1>
-    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+    <h1 class="jumbotron-heading">Get an offer on your items with a click of a button.</h1>
+    <p class="lead text-muted">Sell your items whether used or new.</p>
     <p>
-      <a href="#" class="btn btn-primary my-2">Main call to action</a>
-      <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+      <%= link_to "Browse items", items_path, class: "btn btn-primary my-2" %>
+      <%= link_to "Sell your item", new_item_path, class: "btn btn-secondary my-2" %>
     </p>
   </div>
 </section>
+<div class="container pt-4 pb-4">
+  <h1 class="text-center mb-3">How it works</h1>
+  <div class="row">
+    <div class="col-sm-4">
+      <p class="text-center lead">Sign up</p>
+      <p class="lead text-center text-muted">Sign up easily, with a few details.</p>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center lead">Add your items</p>
+      <p class="lead text-center text-muted">Add your items in less than a minute.</p>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center lead">Wait for the call</p>
+      <p class="lead text-center text-muted">Sit back relax and wait for potential buyers.</p>
+    </div>
+  </div>
+</div>
 <div class="album py-5 bg-light">
   <div class="container">
+    <h2 class="text-center pb-4">Latest items</h2>
     <div class="row">
 			<% @items.each do |item| %>
-	      <div class="col-md-4">
+	      <div class="col-md-3 col-6">
 	        <div class="card mb-4 box-shadow">
 						<%= image_tag(item.image.url(:card), class: "card-img-top")%>
 	          <div class="card-body">

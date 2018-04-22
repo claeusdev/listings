@@ -1,8 +1,8 @@
 
-.col-md-3
+.col-md-3.col-6
   .card.mb-4.box-shadow
     = image_tag(item.image.url(:card), class: "card-img-top")
     .card-body
-      %p.card-text= item.name
+      %p.card-text= link_to item.name, item
       .d-flex.justify-content-between.align-items-center
         %p.lead.text-muted= number_to_currency(item.price)

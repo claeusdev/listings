@@ -1,5 +1,9 @@
 .container.mt-5.pt-2
+  %p.lead.text-center
+    Sold by:
+    %span= link_to @item.user.username, @item.user
   .row.justify-content-center
+
     .col-sm-6
       = image_tag(@item.image.url, class: "img-fluid")
 
@@ -7,5 +11,5 @@
       %h2= @item.name
       %p.lead= @item.description
       %p= @item.price
-      %p.text-muted Contact this person: 
+      %p.text-muted Contact this person:
       %p= @item.user.phone
