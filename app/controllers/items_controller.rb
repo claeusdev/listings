@@ -17,6 +17,25 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.friendly.find(params[:id])
+    set_meta_tags title: @item.name,
+                    site: 'Smayas',
+                    reverse: true,
+                    description: @item.description.truncate(200),
+                    twitter: {
+                        card: 'summary',
+                        site: '@smayas',
+                        title: @item.name,
+                        creator: '@shopaholicks',
+                        description: @item.description.truncate(200),
+                        image: view_context.image_url(@item.image.url(:card))
+                    },
+                    og: {
+                        title: "#{@item.name}",
+                        description: @item.description.truncate(200),
+                        type: 'website',
+                        url: item_url(@item),
+                        image: @item.image.url
+                    }
   end
 
   private

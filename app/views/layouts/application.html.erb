@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>List</title>
+    <%= display_meta_tags %>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,5 +14,16 @@
   <body style="padding-top: 70px;">
     <%= render "layouts/header" %>
     <%= yield %>
+
+    <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5adca08ebc190a0013e2ac3d&product=social-ab' async='async'></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-66461117-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-66461117-6');
+</script>
   </body>
 </html>
